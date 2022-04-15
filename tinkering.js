@@ -1,27 +1,18 @@
-function makeLine(length) {
-  let line = "";
-  for (let j = 1; j <= length; j++) {
-    line += "* "
+
+function range(start, end, step) {
+  let someArray = []
+  if (start === undefined || end === undefined || step === undefined){
+    return []
+  } else if (start > end) {
+    return []
+  } else if (step <= 0) {
+    return []
+  } else {
+  for (let i = start; i <= end; i += step){
+  someArray.push(i)
   }
-  return line + "\n";
+} return someArray
 }
-
-function buildTriangle(num) {
-  let result = ""
-  for (let i = 1; i <= num; i++) {
-    result += makeLine(i)
-  }
-  return result
-}
-console.log(buildTriangle(10));
-
-
-var laugh = function(max) {
-  let ha = ""
-  for (i = 0; i < max; i++) {
-    ha += "ha"
-  }
-  return ha + "!"
-}
-
-console.log(laugh(10));
+console.log(range(0, 10, 2));
+console.log(range(10, 30, 5));
+console.log(range(-5, 2, 3));
